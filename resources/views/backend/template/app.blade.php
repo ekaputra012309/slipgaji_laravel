@@ -8,8 +8,7 @@
     <title>{{ config('app.name') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
 
     <link rel="stylesheet" href="{{ asset('backend/css/OverlayScrollbars.min.css') }}">
@@ -21,8 +20,7 @@
     <script src="{{ asset('backend/js/jquery.overlayScrollbars.min.js') }}"></script>
 
     {{-- datatables css --}}
-    <link rel="stylesheet"
-        href="https://adminlte.io/themes/v3/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     {{-- <link rel="stylesheet" href="{{ asset('backend/css/datatables/dataTables.bootstrap4.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('backend/css/datatables/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/datatables/buttons.bootstrap4.min.css') }}">
@@ -101,6 +99,24 @@
         .input-subtotal {
             min-width: 140px;
         }
+
+        .main-header {
+            background-image: url("{{ asset('backend/img/background.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            /* Adjust the alpha value (0.7) for transparency */
+        }
+
+        .main-footer {
+            background-image: url("{{ asset('backend/img/background.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -111,7 +127,7 @@
         @include('sweetalert::alert')
         @yield('content')
 
-        <footer class="main-footer">
+        <footer class="main-footer ">
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 1.1.0
             </div>
@@ -128,7 +144,7 @@
     <script>
         $(document).ready(function() {
             $.ajax({
-                url: '{{ route('get.role.name') }}',
+                url: '{{ route("get.role.name") }}',
                 type: 'GET',
                 success: function(response) {
                     if (response.role_name) {

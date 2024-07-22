@@ -50,7 +50,7 @@ class SuperAdminUserSeeder extends Seeder
         ]);
 
         DB::table('tbl_about')->insert([
-            'logo' => '',
+            'logo' => '1721563574_logo',
             'nama' => 'Pengadilan Tinggi Jakarta',
             'alias' => 'PTJ',
             'alamat' => 'Jl. Letnan Jendral Suprapto, RT.9/RW.7, Cemp. Putih Tim., Kec. Cemp. Putih, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10510',
