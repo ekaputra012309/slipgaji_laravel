@@ -37,6 +37,7 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
+                                            <th class="d-none">no</th>
                                             <th class="text-center">
                                                 #
                                             </th>
@@ -48,6 +49,9 @@
                                     <tbody>
                                         @foreach ($datapotongan as $potongan)
                                             <tr>
+                                                <td class="d-none">
+                                                    {{ $potongan->id }}
+                                                </td>
                                                 <td>
                                                     <a class="btn btn-sm btn-primary"
                                                         href="{{ route('potongan.edit', $potongan->id) }}">
@@ -59,8 +63,8 @@
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
                                                 </td>
-                                                <td>{{ $potongan->pegawai->nip }}</td>
-                                                <td>{{ $potongan->pegawai->nama_pegawai }}</td>
+                                                <td>{{ $potongan->pegawai->nip ?? '' }}</td>
+                                                <td>{{ $potongan->pegawai->nama_pegawai ?? '' }}</td>
                                                 <td class="text-right">
                                                     {{ number_format($potongan->gajiakhir, 0, ',', '.') }}</td>
                                             </tr>
@@ -78,6 +82,9 @@
                 "responsive": true,
                 "lengthChange": true,
                 "autoWidth": true,
+                "order": [
+                    [0, 'desc']
+                ],
                 // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         </script>

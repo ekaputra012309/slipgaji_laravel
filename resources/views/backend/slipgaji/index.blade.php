@@ -41,6 +41,7 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
+                                            <th class="d-none">no</th>
                                             <th class="text-center">
                                                 #
                                             </th>
@@ -53,6 +54,9 @@
                                     <tbody>
                                         @foreach ($dataslipgaji as $slipgaji)
                                             <tr>
+                                                <td class="d-none">
+                                                    {{ $slipgaji->id }}
+                                                </td>
                                                 <td>
                                                     <a class="btn btn-sm btn-success"
                                                         href="{{ route('slipgaji.show', $slipgaji->id) }}">
@@ -86,6 +90,9 @@
                 "responsive": true,
                 "lengthChange": true,
                 "autoWidth": true,
+                "order": [
+                    [0, 'desc']
+                ],
                 // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         </script>

@@ -17,7 +17,7 @@ class SlipgajiController extends Controller
     public function index()
     {
         $role = Privilage::getRoleKodeForAuthenticatedUser();
-        $query = SlipGaji::with('pegawai')->orderBy('id_pegawai', 'asc');
+        $query = SlipGaji::with('pegawai')->orderBy('created_at', 'desc');
 
         if ($role != 'admin') {
             $email = Auth::user()->email; // Use Auth::user() to get the authenticated user

@@ -14,7 +14,7 @@ class PotonganController extends Controller
     public function index()
     {
         $potongans = Potongan::with('pegawai')
-            ->orderBy('id_pegawai', 'asc')
+            ->orderBy('id', 'asc')
             ->get();
         $potongans->transform(function ($potongan) {
             // Calculate the total deductions
@@ -33,6 +33,7 @@ class PotonganController extends Controller
             'title' => 'Potongan | ',
             'datapotongan' => $potongans,
         ];
+        // dd($potongans);
         $title = 'Delete Hotel!';
         $text = "Are you sure you want to delete?";
         confirmDelete($title, $text);
