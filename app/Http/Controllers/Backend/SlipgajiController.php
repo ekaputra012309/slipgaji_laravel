@@ -36,10 +36,14 @@ class SlipgajiController extends Controller
             return $slipgaji;
         });
 
-        return view('backend.slipgaji.index', [
-            'title' => 'slipgaji | ',
+        $data = [
+            'title' => 'Potongan | ',
             'dataslipgaji' => $slipgajis,
-        ]);
+        ];
+        $title = 'Delete Slipgaji!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+        return view('backend.slipgaji.index', $data);
     }
 
 
