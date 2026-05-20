@@ -8,8 +8,10 @@
     <link rel="shortcut icon" href={{ asset('backend/img/favicon.ico') }} type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    {{-- <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css"> --}}
+    <link rel="stylesheet" href="{{ asset('backend/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/adminlte.min.css?v=3.2.0') }}">
 
     <style>
@@ -134,7 +136,8 @@
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
-                        <input type="password" class="form-control" placeholder="Password" id="password" name="password" required>
+                        <input type="password" class="form-control" placeholder="Password" id="password"
+                            name="password" required>
                         <div class="input-group-append">
                             <div class="input-group-text eye-icon" id="toggle-password">
                                 <span class="fas fa-eye"></span>
