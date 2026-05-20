@@ -62,11 +62,13 @@
                                                         href="{{ route('slipgaji.show', $slipgaji->id) }}">
                                                         <i class="fas fa-eye"></i> Lihat
                                                     </a>
-                                                    <a class="btn btn-sm btn-danger"
-                                                        href="{{ route('slipgaji.destroy', $slipgaji->id) }}"
-                                                        data-confirm-delete="true">
-                                                        <i class="fas fa-trash"></i> Delete
-                                                    </a>
+                                                    @if (in_array($role, ['admin']))
+                                                        <a class="btn btn-sm btn-danger"
+                                                            href="{{ route('slipgaji.destroy', $slipgaji->id) }}"
+                                                            data-confirm-delete="true">
+                                                            <i class="fas fa-trash"></i> Delete
+                                                        </a>
+                                                    @endif
                                                 </td>
                                                 <td>
                                                     {{ Carbon::createFromFormat('Y-m', $slipgaji->gaji_bulan)->locale('id')->translatedFormat('F Y') }}
