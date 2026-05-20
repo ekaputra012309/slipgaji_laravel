@@ -55,6 +55,12 @@
                                     <p>Potongan</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('jabatan.index') }}"
+                                    class="nav-link {{ request()->routeIs('jabatan.index') ? 'active' : '' }}">
+                                    <p>Jabatan</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 @endif

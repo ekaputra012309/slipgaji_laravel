@@ -10,6 +10,8 @@ use App\Http\Controllers\Backend\SlipgajiController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Backend\JabatanController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +45,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('about', AboutController::class); //about
     Route::resource('slipgaji', SlipgajiController::class); //slipgaji
     Route::resource('user', UserController::class); //user
+
+    Route::resource('jabatan', JabatanController::class)->except('show'); //jabatan
 
     Route::get('/user/{id}/reset-password', [UserController::class, 'resetPassword'])->name('user.resetPassword');
     Route::get('/slipgaji-{pegawai_id}', [SlipgajiController::class, 'getPotonganByPegawai'])->name('slipgaji.getByPegawai');
