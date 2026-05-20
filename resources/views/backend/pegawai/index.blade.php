@@ -42,6 +42,7 @@
                                             </th>
                                             <th>NIP</th>
                                             <th>Nama Pegawai</th>
+                                            <th>Jabatan</th>
                                             <th>Rekening</th>
                                             <th>Action</th>
                                         </tr>
@@ -52,6 +53,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $pegawai->nip }}</td>
                                                 <td>{{ $pegawai->nama_pegawai }}</td>
+                                                <td>{{ $pegawai->jabatan->nama_jabatan ?? '' }}</td>
                                                 <td>{{ $pegawai->no_rek }}</td>
                                                 <td>
                                                     <a class="btn btn-sm btn-primary"

@@ -51,6 +51,19 @@
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
+                                            <label for="jabatan_id" class="form-label">Jabatan Pegawai</label>
+                                            <select id="jabatan_id" name="jabatan_id" class="form-control">
+                                                @foreach ($jabatan as $item)
+                                                    <option value="{{ $item->id }}"
+                                                        {{ $item->id == $pegawai->jabatan_id ? 'selected' : '' }}>
+                                                        {{ $item->nama_jabatan }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
                                             <label for="no-rek-column" class="form-label">No Rekening</label>
                                             <input type="number" id="no_rek" class="form-control" name="no_rek"
                                                 value="{{ $pegawai->no_rek }}" placeholder="No Rekening" required>

@@ -11,7 +11,7 @@ class Pegawai extends Model
 
     protected $table = 'tbl_pegawai';
     protected $primaryKey = 'id';
-    protected $fillable = ['nip', 'nama_pegawai', 'no_rek', 'status', 'user_id'];
+    protected $fillable = ['nip', 'nama_pegawai', 'jabatan_id' ,'no_rek', 'status', 'user_id'];
 
     // Define the relationship with the Potongan model
     public function potongans()

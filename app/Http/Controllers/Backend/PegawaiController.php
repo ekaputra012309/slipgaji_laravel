@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Pegawai;
 use App\Models\Privilage;
 use App\Models\User;
+use App\Models\Jabatan;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -14,7 +15,8 @@ class PegawaiController extends Controller
 {
     public function index()
     {
-        $pegawai = Pegawai::where('status', '=', '1')
+        $pegawai = Pegawai::with('jabatan')
+            ->where('status', '=', '1')
             ->orderBy('nama_pegawai', 'asc')
             ->get();
         $data = array(
@@ -26,7 +28,8 @@ class PegawaiController extends Controller
 
     public function index2()
     {
-        $pegawai = Pegawai::where('status', '=', '0')
+        $pegawai = Pegawai::with('jabatan')
+            ->where('status', '=', '0')
             ->orderBy('nama_pegawai', 'asc')
             ->get();
         $data = array(
@@ -38,8 +41,10 @@ class PegawaiController extends Controller
 
     public function create()
     {
+        $jabatan = Jabatan::orderBy('nama_jabatan', 'asc')->get();
         $data = array(
             'title' => 'Add Pegawai | ',
+            'jabatan' => $jabatan,
         );
         return view('backend.pegawai.create', $data);
     }
@@ -49,6 +54,7 @@ class PegawaiController extends Controller
         $request->validate([
             'nip' => 'required|string|max:255',
             'nama_pegawai' => 'required|string|max:255',
+            'jabatan_id' => 'required|exists:tbl_jabatan,id',
             'no_rek' => 'required|string|max:255',
         ]);
 
@@ -83,9 +89,11 @@ class PegawaiController extends Controller
 
     public function edit(Pegawai $pegawai)
     {
+        $jabatan = Jabatan::orderBy('nama_jabatan', 'asc')->get();
         $data = array(
             'title' => 'Edit Pegawai | ',
             'pegawai' => $pegawai,
+            'jabatan' => $jabatan,
         );
         return view('backend.pegawai.edit', $data);
     }
@@ -95,9 +103,10 @@ class PegawaiController extends Controller
         $request->validate([
             'nip' => 'required|string|max:255',
             'nama_pegawai' => 'required|string|max:255',
+            'jabatan_id' => 'required|exists:tbl_jabatan,id',
             'no_rek' => 'required|string|max:255',
         ]);
-
+        
         $pegawai->update($request->all());
         Alert::success('Success', 'Pegawai updated successfully.');
 
