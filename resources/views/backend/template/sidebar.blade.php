@@ -91,6 +91,12 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
+                                <a href="{{ route('surat.index') }}"
+                                    class="nav-link {{ request()->routeIs('surat.index') ? 'active' : '' }}">
+                                    <p>Format Surat</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{ route('user.index') }}"
                                     class="nav-link {{ request()->routeIs('user.index') ? 'active' : '' }}">
                                     <p>Akun Pegawai</p>

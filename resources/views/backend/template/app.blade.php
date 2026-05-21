@@ -121,6 +121,8 @@
             color: #fff;
         }
     </style>
+
+    @yield('css')
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -162,6 +164,8 @@
             });
         });
     </script>
+
+    @yield('js')
 </body>
 
 </html>

@@ -54,7 +54,10 @@
                                         <h4 style="margin: 0;">Detail Slip Gaji</h4>
                                         <input type="hidden" id="id_slipgaji">
                                     </div>
-                                    <div class="card-tools">
+                                    <div class="card-tools ml-auto">
+                                        <a href="{{ route('slipgaji.cetakSurat', $slipgaji->id) }}" target="_blank" class="btn btn-success">
+                                            <i class="fas fa-file-pdf"></i> Download Surat
+                                        </a>
                                         <button class="btn btn-danger btn-download-pdf" onclick="downloadPdf()"><i
                                                 class="fas fa-file-pdf"></i> Download PDF</button>
                                     </div>

@@ -7,10 +7,14 @@ use App\Models\Pegawai;
 use App\Models\Potongan;
 use App\Models\Privilage;
 use App\Models\SlipGaji;
+use App\Models\Surat;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Str;
+use Illuminate\Support\Number;
 
 class SlipgajiController extends Controller
 {
@@ -98,11 +102,11 @@ class SlipgajiController extends Controller
     }
 
     public function show(Slipgaji $slipgaji)
-    {
+    {        
         $slipgaji->load('pegawai');
         $data = [
             'title' => 'View slipgaji | ',
-            'slipgaji' => $slipgaji,
+            'slipgaji' => $slipgaji,            
         ];
         return view('backend.slipgaji.show', $data);
     }
@@ -163,5 +167,25 @@ class SlipgajiController extends Controller
         }
 
         return response()->json(['error' => 'Data not found'], 404);
+    }
+
+    public function cetakSurat(Slipgaji $slipgaji)
+    {
+        $surat = Surat::get()->first();
+        $formatter = new \NumberFormatter('id_ID', \NumberFormatter::CURRENCY);
+        $slipgaji->load('pegawai');
+        $data = [
+            'surat' => $surat,            
+            'nama_staff' => $slipgaji->pegawai->nama_pegawai,
+            'jabatan_staff' => $slipgaji->pegawai->jabatan->nama_jabatan ?? '-',
+            'gaji' => $formatter->formatCurrency($slipgaji->gaji, 'IDR'),
+        ];
+        
+        $pdf = PDF::loadView('backend.slipgaji.surat', $data);
+
+        // $namaPegawai = str_replace(' ', '-', $slipgaji->pegawai->nama_pegawai);
+        $namaPegawai = Str::slug($slipgaji->pegawai->nama_pegawai);
+
+        return $pdf->stream('surat-keterangan-kerja-' . $namaPegawai . '.pdf');
     }
 }

@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Backend\JabatanController;
+use App\Http\Controllers\Backend\SuratController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,8 +49,13 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('jabatan', JabatanController::class)->except('show'); //jabatan
 
+    // Route::get('/surat', [SuratController::class, 'index'])->name('surat.index');
+    Route::resource('surat', SuratController::class); //surat
+
     Route::get('/user/{id}/reset-password', [UserController::class, 'resetPassword'])->name('user.resetPassword');
     Route::get('/slipgaji-{pegawai_id}', [SlipgajiController::class, 'getPotonganByPegawai'])->name('slipgaji.getByPegawai');
+    Route::get('/slipgaji/{slipgaji}/cetak-surat', [SlipGajiController::class, 'cetakSurat'])
+            ->name('slipgaji.cetakSurat');
 });
 
 require __DIR__ . '/auth.php';
