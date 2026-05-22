@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function () {
 
     // Route::get('/surat', [SuratController::class, 'index'])->name('surat.index');
     Route::resource('surat', SuratController::class); //surat
+    Route::resource('privilage', PrivilageController::class); //privilage
 
     Route::get('/user/{id}/reset-password', [UserController::class, 'resetPassword'])->name('user.resetPassword');
     Route::get('/slipgaji-{pegawai_id}', [SlipgajiController::class, 'getPotonganByPegawai'])->name('slipgaji.getByPegawai');

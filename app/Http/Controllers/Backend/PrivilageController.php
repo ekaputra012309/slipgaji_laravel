@@ -15,7 +15,7 @@ class PrivilageController extends Controller
     public function index()
     {
         $privilage = Privilage::with('user', 'role')
-            ->where('role_id', '!=', 1)
+            ->where('role_id', '!=', 3)
             ->get();
         $data = array(
             'title' => 'Privilage | ',

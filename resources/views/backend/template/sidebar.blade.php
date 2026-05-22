@@ -20,7 +20,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
 
-                @if (in_array($role, ['admin']))
+                @if (in_array($role, ['admin', 'superadmin']))
                     <li class="nav-item">
                         <a href="{{ route('dashboard') }}"
                             class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
@@ -30,7 +30,7 @@
                     </li>
                 @endif
 
-                @if (in_array($role, ['admin']))
+                @if (in_array($role, ['admin', 'superadmin']))
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-layer-group"></i>
@@ -79,11 +79,11 @@
                     </li>
                 @endif
 
-                @if (in_array($role, ['admin']))
+                @if (in_array($role, ['admin', 'superadmin']))
                     <li class="nav-header">Settings</li>
                 @endif
 
-                @if (in_array($role, ['admin']))
+                @if (in_array($role, ['admin', 'superadmin']))
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-cogs"></i>
@@ -102,15 +102,25 @@
                                     <p>Akun Pegawai</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{{ route('about.edit', 1) }}"
-                                    class="nav-link {{ request()->routeIs('about.index', 1) ? 'active' : '' }}">
-                                    <p>Settings</p>
-                                </a>
-                            </li>
-                        </ul>
+                @endif
+                @if (in_array($role, ['superadmin']))
+                    <li class="nav-item">
+                        <a href="{{ route('privilage.index') }}"
+                            class="nav-link {{ request()->routeIs('privilage.index') ? 'active' : '' }}">
+                            <p>Privilage</p>
+                        </a>
                     </li>
                 @endif
+                @if (in_array($role, ['admin', 'superadmin']))
+                    <li class="nav-item">
+                        <a href="{{ route('about.edit', 1) }}"
+                            class="nav-link {{ request()->routeIs('about.index', 1) ? 'active' : '' }}">
+                            <p>Settings</p>
+                        </a>
+                    </li>
+            </ul>
+            </li>
+            @endif
             </ul>
         </nav>
     </div>
