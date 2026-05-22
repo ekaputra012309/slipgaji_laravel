@@ -53,6 +53,7 @@
                                         <div class="form-group">
                                             <label for="jabatan_id" class="form-label">Jabatan Pegawai</label>
                                             <select id="jabatan_id" name="jabatan_id" class="form-control">
+                                                <option value="">Pilih Jabatan</option>
                                                 @foreach ($jabatan as $item)
                                                     <option value="{{ $item->id }}"
                                                         {{ $item->id == $pegawai->jabatan_id ? 'selected' : '' }}>
