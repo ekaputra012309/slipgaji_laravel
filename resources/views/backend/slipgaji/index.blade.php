@@ -91,7 +91,7 @@
             $("#example1").DataTable({
                 "responsive": true,
                 "lengthChange": true,
-                "autoWidth": true,
+                "autoWidth": false,
                 "order": [
                     [0, 'desc']
                 ],
