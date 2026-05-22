@@ -66,7 +66,7 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="no-rek-column" class="form-label">No Rekening</label>
-                                            <input type="number" id="no_rek" class="form-control" name="no_rek"
+                                            <input type="text" id="no_rek" class="form-control" name="no_rek"
                                                 value="{{ $pegawai->no_rek }}" placeholder="No Rekening" required>
                                         </div>
                                     </div>
@@ -85,7 +85,12 @@
         <script>
             $(document).ready(function() {
                 $('.select2bs4').select2({
-                    theme: 'bootstrap4'
+                    theme: 'bootstrap4',
+                    minimumResultsForSearch: 0
+                });
+
+                $('#no_rek').on('input', function() {
+                    this.value = this.value.replace(/[^0-9]/g, '');
                 });
             });
         </script>
