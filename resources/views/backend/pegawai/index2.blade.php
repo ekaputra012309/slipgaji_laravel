@@ -28,7 +28,7 @@
                             <div class="card-header">
 
                                 <div class="card-tools">
-                                    <a href="{{ route('pegawai.create') }}" class="btn btn-primary btn-sm">
+                                    <a href="{{ route('pegawai.create') }}" class="btn btn-primary btn-sm d-none">
                                         <i class="fas fa-plus"></i> Add Data
                                     </a>
                                 </div>
