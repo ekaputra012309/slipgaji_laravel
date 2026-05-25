@@ -32,9 +32,11 @@
                             <div class="card-header">
 
                                 <div class="card-tools">
-                                    <a href="{{ route('slipgaji.create') }}" class="btn btn-primary btn-sm">
-                                        <i class="fas fa-plus"></i> Add Data
-                                    </a>
+                                    @if (in_array($role, ['admin', 'superadmin']))
+                                        <a href="{{ route('slipgaji.create') }}" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-plus"></i> Add Data
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                             <div class="card-body">
