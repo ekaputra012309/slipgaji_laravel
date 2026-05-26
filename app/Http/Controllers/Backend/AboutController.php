@@ -31,21 +31,19 @@ class AboutController extends Controller
 
         $logoPath = $about->logo;
 
+        // CHECK IF NEW LOGO UPLOADED
         if ($request->hasFile('logo')) {
 
-            // Delete old logo
-            if ($about->logo && file_exists(public_path($about->logo))) {
-                @unlink(public_path($about->logo));
+            // DELETE OLD FILE (SAFE)
+            if ($about->logo && Storage::disk('public')->exists($about->logo)) {
+                Storage::disk('public')->delete($about->logo);
             }
 
-            $file = $request->file('logo');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-
-            $file->move(public_path('logos'), $fileName);
-
-            $logoPath = 'logos/' . $fileName;
+            // STORE NEW FILE
+            $logoPath = $request->file('logo')->store('logos', 'public');
         }
 
+        // UPDATE DATABASE
         $about->update([
             'logo' => $logoPath,
             'nama' => $request->nama,
