@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-light-primary elevation-4">
     <a href="{{ route('dashboard') }}" class="brand-link">
-        <img src="{{ asset('backend/img/logo.png') }}" alt="AdminLTE Logo" style="height: 50px;">
-        <span class="brand-text font-weight-bold">PT JAKARTA</span>
+        <img src="#" alt="AdminLTE Logo" id="logo-about" style="height: 50px;">
+        <span class="brand-text font-weight-bold alias">E-SIJI</span>
     </a>
     <div class="sidebar">
         <br>
@@ -65,11 +65,9 @@
                     </li>
                 @endif
 
-                @if (in_array($role, ['user', 'admin']))
+                @if (in_array($role, ['user', 'admin', 'superadmin']))
                     <li class="nav-header">Slip Gaji</li>
-                @endif
 
-                @if (in_array($role, ['user', 'admin']))
                     <li class="nav-item">
                         <a href="{{ route('slipgaji.index') }}"
                             class="nav-link {{ request()->routeIs('slipgaji.index') ? 'active' : '' }}">

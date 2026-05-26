@@ -75,8 +75,12 @@
             height: 1rem;
         }
 
-        .logo {
-            padding: 50px 0px;
+        .logo-about {
+            width: 300px;
+            background-color: #343a40;
+            padding: 20px;
+            border-radius: 10%;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -84,7 +88,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="text-center">
-            <img src="{{ asset('backend/img/logo.png') }}" alt="logo" style="width: 100px" class="logo">
+            <img src="#" alt="logo" style="width: 200px" class="logo-about">
         </div>
         <div class="card card-outline card-primary bg-dark">
             <div class="card-header text-center">
@@ -114,7 +118,9 @@
                         <span class="sr-only">Loading...</span>
                     </div>
                 </div>
-                <a href="#" class="h3"><b>{{ config('app.name') }}</b></a>
+                <a href="#" class="h3"><b>
+                        <span class="alias text-uppercase">E-SIJI</span>
+                    </b></a>
             </div>
             <div class="card-body">
                 <form action="{{ route('login') }}" method="POST">
@@ -169,6 +175,22 @@
                 } else {
                     passwordField.attr('type', 'password');
                     $(this).find('span').removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            });
+
+            $.ajax({
+                url: '{{ route('get.about') }}',
+                type: 'GET',
+                success: function(response) {
+                    // Change alias text
+                    $('.alias').text(response.about.nama);
+                    // Change logo image
+                    if (response.about.logo) {
+                        $('.logo-about').attr('src', '/' + response.about.logo);
+                    }
+                },
+                error: function(error) {
+                    console.log("Error fetching about data");
                 }
             });
         });

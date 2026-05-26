@@ -162,6 +162,23 @@
                     console.log("Error fetching role name");
                 }
             });
+
+            // get about
+            $.ajax({
+                url: '{{ route('get.about') }}',
+                type: 'GET',
+                success: function(response) {
+                    // Change alias text
+                    $('.alias').text(response.about.alias);
+                    // Change logo image
+                    if (response.about.logo) {
+                        $('#logo-about').attr('src', '/' + response.about.logo);
+                    }
+                },
+                error: function(error) {
+                    console.log("Error fetching about data");
+                }
+            });
         });
     </script>
 

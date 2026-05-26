@@ -55,7 +55,8 @@
                                         <input type="hidden" id="id_slipgaji">
                                     </div>
                                     <div class="card-tools ml-auto">
-                                        <a href="{{ route('slipgaji.cetakSurat', $slipgaji->id) }}" target="_blank" class="btn btn-success">
+                                        <a href="{{ route('slipgaji.cetakSurat', $slipgaji->id) }}" target="_blank"
+                                            class="btn btn-success">
                                             <i class="fas fa-file-pdf"></i> Download Surat
                                         </a>
                                         <button class="btn btn-danger btn-download-pdf" onclick="downloadPdf()"><i
@@ -66,12 +67,12 @@
                                 <div class="card-body">
                                     <div id="print-section" style="width: auto;">
                                         <div class="row justify-content-center">
-                                            <img src="{{ asset('backend/img/logo.png') }}" alt="logo"
-                                                style="width: 100px" class="logo p-3">
+                                            <img src="{{ asset($about->logo) }}" alt="logo" style="width: 300px"
+                                                class="logo pb-3">
                                         </div>
-                                        <h3 style="text-align: center;">SLIP GAJI</h3>
-                                        <p class="text-uppercase text-bold text-center">
-                                            PENGADILAN TINGGI JAKARTA</p>
+                                        {{-- <h3 style="text-align: center; text-transform: uppercase;">
+                                            {{ $about->nama }}
+                                        </h3> --}}
                                         <div class="table-responsive">
                                             <table border="0">
                                                 <tr>

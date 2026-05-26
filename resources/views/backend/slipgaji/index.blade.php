@@ -64,7 +64,7 @@
                                                         href="{{ route('slipgaji.show', $slipgaji->id) }}">
                                                         <i class="fas fa-eye"></i> Lihat
                                                     </a>
-                                                    @if (in_array($role, ['admin']))
+                                                    @if (in_array($role, ['admin', 'superadmin']))
                                                         <a class="btn btn-sm btn-danger"
                                                             href="{{ route('slipgaji.destroy', $slipgaji->id) }}"
                                                             data-confirm-delete="true">

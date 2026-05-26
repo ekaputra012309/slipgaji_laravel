@@ -19,7 +19,7 @@ class AboutController extends Controller
         return view('backend.about.index', $data);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, About $about)
     {
         $request->validate([
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -29,45 +29,39 @@ class AboutController extends Controller
             'deskripsi' => 'nullable|string',
         ]);
 
-        $about = About::findOrFail($id);
+        $logoPath = $about->logo;
 
-        // Handle the logo upload
         if ($request->hasFile('logo')) {
-            // Define the directory to store the logo
-            $directory = 'logos';
 
-            // Delete old logo if it exists
+            // Delete old logo
             if ($about->logo && file_exists(public_path($about->logo))) {
-                unlink(public_path($about->logo));
+                @unlink(public_path($about->logo));
             }
 
-            // Get the new logo file
             $file = $request->file('logo');
-
-            // Generate the new file name
             $fileName = time() . '_' . $file->getClientOriginalName();
 
-            // Move the file to the public directory
-            $file->move(public_path($directory), $fileName);
+            $file->move(public_path('logos'), $fileName);
 
-            // Set the relative path for the logo
-            $logoPath = $directory . '/' . $fileName;
-        } else {
-            // Keep existing logo if no new file is uploaded
-            $logoPath = $about->logo;
+            $logoPath = 'logos/' . $fileName;
         }
 
-        // Update the About record
         $about->update([
             'logo' => $logoPath,
-            'nama' => $request->input('nama', $about->nama),
-            'alias' => $request->input('alias', $about->alias),
-            'alamat' => $request->input('alamat', $about->alamat),
-            'deskripsi' => $request->input('deskripsi', $about->deskripsi),
+            'nama' => $request->nama,
+            'alias' => $request->alias,
+            'alamat' => $request->alamat,
+            'deskripsi' => $request->deskripsi,
         ]);
 
         Alert::success('Success', 'About information updated successfully.');
 
-        return redirect()->route('about.edit', $id);
+        return redirect()->route('about.edit', $about->id);
+    }
+
+    public function getAbout () {
+        $about = About::first();
+        return response()->json(['about' => $about]);
+
     }
 }
