@@ -32,8 +32,9 @@
                                         <label for="logo">Logo</label>
                                         @if ($about->logo)
                                             <div class="mb-2">
-                                                <img src="{{ asset($about->logo) }}" alt="Current Logo"
+                                                <img src="{{ asset('storage/' . $about->logo) }}" alt="Current Logo"
                                                     style="max-width: 150px;">
+
                                             </div>
                                         @endif
                                         <input type="file" id="logo" class="form-control" name="logo">

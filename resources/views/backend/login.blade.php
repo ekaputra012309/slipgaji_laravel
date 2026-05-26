@@ -186,7 +186,7 @@
                     $('.alias').text(response.about.nama);
                     // Change logo image
                     if (response.about.logo) {
-                        $('.logo-about').attr('src', '/' + response.about.logo);
+                        $('.logo-about').attr('src', '/storage/' + response.about.logo);
                     }
                 },
                 error: function(error) {
