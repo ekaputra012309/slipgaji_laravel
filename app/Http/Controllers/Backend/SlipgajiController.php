@@ -8,6 +8,7 @@ use App\Models\Potongan;
 use App\Models\Privilage;
 use App\Models\SlipGaji;
 use App\Models\Surat;
+use App\Models\About;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,8 @@ class SlipgajiController extends Controller
         $role = Privilage::getRoleKodeForAuthenticatedUser();
         $query = SlipGaji::with('pegawai')->orderBy('created_at', 'desc');
 
-        if ($role != 'admin') {
+        if (!in_array($role, ['admin', 'superadmin'], true)) {
+        // if ($role != 'admin') {
             $email = Auth::user()->email; // Use Auth::user() to get the authenticated user
             $idPegawai = Pegawai::where('nip', $email)->pluck('id');
             $query->whereIn('id_pegawai', $idPegawai);
@@ -104,10 +106,13 @@ class SlipgajiController extends Controller
     public function show(Slipgaji $slipgaji)
     {        
         $slipgaji->load('pegawai');
+        $about = About::first();
         $data = [
             'title' => 'View slipgaji | ',
-            'slipgaji' => $slipgaji,            
+            'slipgaji' => $slipgaji,
+            'about' => $about,
         ];
+        // dd($data);
         return view('backend.slipgaji.show', $data);
     }
 
