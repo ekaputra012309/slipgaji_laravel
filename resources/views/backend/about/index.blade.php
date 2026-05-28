@@ -62,7 +62,6 @@
 
                                 <div class="card-footer">
                                     <button type="submit" class="btn btn-success">Update</button>
-                                    <a href="{{ route('about.index') }}" class="btn btn-secondary">Back</a>
                                 </div>
                             </form>
                         </div>
