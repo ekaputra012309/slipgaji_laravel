@@ -34,7 +34,7 @@ class PotonganController extends Controller
             'datapotongan' => $potongans,
         ];
         // dd($potongans);
-        $title = 'Delete Hotel!';
+        $title = 'Delete Potongan!';
         $text = "Are you sure you want to delete?";
         confirmDelete($title, $text);
         return view('backend.potongan.index', $data);
