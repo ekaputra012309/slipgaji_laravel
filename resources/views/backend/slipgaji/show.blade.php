@@ -69,8 +69,8 @@
                                 <div class="card-body">
                                     <div id="print-section" style="width: auto;">
                                         <div class="row justify-content-center">
-                                            <img src="{{ asset($about->logo) }}" alt="logo" style="width: 300px"
-                                                class="logo pb-3">
+                                            <img src="{{ asset('storage/' . $about->logo) }}" alt="logo"
+                                                style="width: 300px" class="logo pb-3">
                                         </div>
                                         {{-- <h3 style="text-align: center; text-transform: uppercase;">
                                             {{ $about->nama }}
