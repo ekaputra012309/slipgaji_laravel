@@ -68,13 +68,28 @@
 
                                 <div class="card-body">
                                     <div id="print-section" style="width: auto;">
-                                        <div class="row justify-content-center">
-                                            <img src="{{ asset('storage/' . $about->logo) }}" alt="logo"
-                                                style="width: 300px" class="logo pb-3">
-                                        </div>
                                         {{-- <h3 style="text-align: center; text-transform: uppercase;">
                                             {{ $about->nama }}
                                         </h3> --}}
+                                        <div>
+                                            <table border="0" style="width: 100%">
+                                                <tr>
+                                                    <td style="text-align: left, width: 25%">
+                                                        <img src="{{ asset('storage/logos/logo.png') }}" alt="logo"
+                                                            style="height: 100px" class=" pb-3">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center">
+                                                        <img src="{{ asset('storage/logos/logo_aja.png') }}" alt="logo"
+                                                            style="width: 150px" class=" pb-3">
+                                                        <h2>
+                                                            Elektronik Slip Gaji
+                                                        </h2>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
                                         <div class="table-responsive">
                                             <table border="0">
                                                 <tr>
@@ -328,7 +343,7 @@
                     },
                     jsPDF: {
                         unit: 'in',
-                        format: 'letter',
+                        format: 'legal',
                         orientation: 'portrait'
                     }
                 });

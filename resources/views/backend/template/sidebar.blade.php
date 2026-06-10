@@ -79,25 +79,18 @@
 
                 @if (in_array($role, ['admin', 'superadmin']))
                     <li class="nav-header">Settings</li>
-                @endif
-
-                @if (in_array($role, ['admin', 'superadmin']))
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-cogs"></i>
                             <p>Feature<i class="right fas fa-angle-left"></i></p>
                         </a>
                         <ul class="nav nav-treeview">
-                            {{-- @endif
-                @if (in_array($role, ['superadmin'])) --}}
                             <li class="nav-item">
                                 <a href="{{ route('surat.index') }}"
                                     class="nav-link {{ request()->routeIs('surat.index') ? 'active' : '' }}">
                                     <p>Format Surat</p>
                                 </a>
                             </li>
-                            {{-- @endif
-                @if (in_array($role, ['admin', 'superadmin'])) --}}
                             <li class="nav-item">
                                 <a href="{{ route('user.index') }}"
                                     class="nav-link {{ request()->routeIs('user.index') ? 'active' : '' }}">
@@ -121,6 +114,16 @@
                         </a>
                     </li>
             </ul>
+            </li>
+
+            <li class="nav-header">Report</li>
+
+            <li class="nav-item">
+                <a href="{{ route('slipgaji.laporan') }}"
+                    class="nav-link {{ request()->routeIs('slipgaji.laporan') ? 'active' : '' }}">
+                    <i class="fas fa-folder-open"></i>
+                    <p>Laporan</p>
+                </a>
             </li>
             @endif
             </ul>
