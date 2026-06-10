@@ -58,6 +58,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/slipgaji-{pegawai_id}', [SlipgajiController::class, 'getPotonganByPegawai'])->name('slipgaji.getByPegawai');
     Route::get('/slipgaji/{slipgaji}/cetak-surat', [SlipGajiController::class, 'cetakSurat'])
             ->name('slipgaji.cetakSurat');
+    Route::get('/laporan', [SlipgajiController::class, 'laporan'])->name('slipgaji.laporan');
+    Route::post('/laporan-generate', [SlipgajiController::class, 'generateLaporan'])->name('laporan.generate');
 });
 
 require __DIR__ . '/auth.php';

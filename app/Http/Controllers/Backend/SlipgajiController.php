@@ -193,4 +193,35 @@ class SlipgajiController extends Controller
 
         return $pdf->stream('surat-keterangan-kerja-' . $namaPegawai . '.pdf');
     }
+
+    public function laporan()
+    {   
+        $data = [
+            'title' => 'Laporan Slip Gaji | ',
+        ];
+        // dd($data);
+        return view('backend.laporan.index', $data);
+    }
+
+    public function generateLaporan(Request $request)
+    {   
+        $request->validate([
+            'gaji_bulan' => 'required'
+        ]);
+
+        $periode = Carbon::createFromFormat('Y-m', $request->gaji_bulan);
+        $date = $periode->locale('id')->translatedFormat('F Y');
+
+        $data = SlipGaji::with('pegawai')
+                ->where('gaji_bulan', $request->gaji_bulan)
+                ->get();
+
+        // dd($data);
+        $pdf = PDF::loadView('backend.laporan.report', [
+            'data' => $data,
+            'date' => $date,
+        ]);
+
+        return $pdf->stream('laporan-gaji-' . $date . '.pdf');
+    }
 }
