@@ -9,6 +9,7 @@ use App\Models\Privilage;
 use App\Models\SlipGaji;
 use App\Models\Surat;
 use App\Models\About;
+use App\Models\Penanggungjawab;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -107,12 +108,13 @@ class SlipgajiController extends Controller
     {        
         $slipgaji->load('pegawai');
         $about = About::first();
+        $p_jawab = Penanggungjawab::first();
         $data = [
             'title' => 'View slipgaji | ',
             'slipgaji' => $slipgaji,
             'about' => $about,
+            'p_jawab' => $p_jawab,
         ];
-        // dd($data);
         return view('backend.slipgaji.show', $data);
     }
 

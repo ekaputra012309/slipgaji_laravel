@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Backend\JabatanController;
 use App\Http\Controllers\Backend\SuratController;
+use App\Http\Controllers\Backend\PenanggungjawabController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,8 +59,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/slipgaji-{pegawai_id}', [SlipgajiController::class, 'getPotonganByPegawai'])->name('slipgaji.getByPegawai');
     Route::get('/slipgaji/{slipgaji}/cetak-surat', [SlipGajiController::class, 'cetakSurat'])
             ->name('slipgaji.cetakSurat');
+            
     Route::get('/laporan', [SlipgajiController::class, 'laporan'])->name('slipgaji.laporan');
     Route::post('/laporan-generate', [SlipgajiController::class, 'generateLaporan'])->name('laporan.generate');
+
+    Route::resource('penanggungjawab', PenanggungjawabController::class); //penanggungjawab
 });
 
 require __DIR__ . '/auth.php';

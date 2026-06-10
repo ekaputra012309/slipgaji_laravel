@@ -126,6 +126,15 @@
                 </a>
             </li>
             @endif
+            @if (in_array($role, ['superadmin']))
+                <li class="nav-item">
+                    <a href="{{ route('penanggungjawab.index') }}"
+                        class="nav-link {{ request()->routeIs('penanggungjawab.index') ? 'active' : '' }}">
+                        <i class="fas fa-users"></i>
+                        <p>Penanggung Jawab</p>
+                    </a>
+                </li>
+            @endif
             </ul>
         </nav>
     </div>

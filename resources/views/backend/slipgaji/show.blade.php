@@ -136,7 +136,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Budi Hapsari</td>
+                                                    <td>{{ $p_jawab->ikahi_cab }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">2.</td>
@@ -146,7 +146,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td> - </td>
+                                                    <td>{{ $p_jawab->lain2 }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">3.</td>
@@ -157,7 +157,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td> - </td>
+                                                    <td>{{ $p_jawab->arisan_gabungan }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">4.</td>
@@ -168,7 +168,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td> - </td>
+                                                    <td>{{ $p_jawab->simpan_pinjam }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">5.</td>
@@ -178,7 +178,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Watty Wiarti</td>
+                                                    <td>{{ $p_jawab->iuran_dyk }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">6.</td>
@@ -189,7 +189,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Nurhayati</td>
+                                                    <td>{{ $p_jawab->iuran_koperasi }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">7.</td>
@@ -199,7 +199,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Inna Iskantriana</td>
+                                                    <td>{{ $p_jawab->ptwp }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">8.</td>
@@ -209,7 +209,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Nurhayati</td>
+                                                    <td>{{ $p_jawab->ipaspi }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">9.</td>
@@ -220,7 +220,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Nurhayati</td>
+                                                    <td>{{ $p_jawab->pinjaman_koperasi }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">10.</td>
@@ -230,7 +230,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Haiva</td>
+                                                    <td>{{ $p_jawab->bapor }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">11.</td>
@@ -241,7 +241,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Budi Hapsari</td>
+                                                    <td>{{ $p_jawab->kebersamaan_hakim }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">12.</td>
@@ -251,7 +251,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Nurhayati</td>
+                                                    <td>{{ $p_jawab->mushola }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">13.</td>
@@ -262,7 +262,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Bag. Keuangan</td>
+                                                    <td>{{ $p_jawab->bri_bsm_jabar }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">14.</td>
@@ -272,7 +272,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Agustina</td>
+                                                    <td>{{ $p_jawab->sewa_rumah }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">15.</td>
@@ -283,7 +283,7 @@
                                                     </td>
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
-                                                    <td>Ibu Betty Hartati</td>
+                                                    <td>{{ $p_jawab->iuran_hakim }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3" style="text-align: right;">Jumlah Potongan</td>
