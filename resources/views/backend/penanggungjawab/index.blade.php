@@ -43,7 +43,7 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>LAIN-LAIN</label>
+                                                <label>DANA SOSIAL</label>
                                                 <input type="text" name="lain2" class="form-control"
                                                     value="{{ $data->lain2 }}">
                                             </div>
