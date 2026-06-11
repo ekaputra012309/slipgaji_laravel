@@ -73,12 +73,12 @@
                                     <div class="row">
                                         <div class="col-md-4 col-12">
                                             <div class="form-group">
-                                                <label for="lain2" class="form-label">Lain-lain</label>
+                                                <label for="lain2" class="form-label">DANA SOSIAL</label>
                                                 <input type="number" id="lain2" class="form-control" name="lain2"
-                                                    placeholder="Lain-lain" readonly required>
+                                                    placeholder="DANA SOSIAL" readonly required>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 col-12">
+                                        {{-- <div class="col-md-4 col-12">
                                             <div class="form-group">
                                                 <label for="arisan_gabungan" class="form-label">Arisan Gabungan DYK</label>
                                                 <input type="number" id="arisan_gabungan" class="form-control"
@@ -91,10 +91,7 @@
                                                 <input type="number" id="simpan_pinjam" class="form-control"
                                                     name="simpan_pinjam" placeholder="Simpan Pinjam" readonly required>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
+                                        </div> --}}
                                         <div class="col-md-4 col-12">
                                             <div class="form-group">
                                                 <label for="iuran_dyk" class="form-label">Iuran DYK</label>
@@ -109,6 +106,9 @@
                                                     name="iuran_koperasi" placeholder="Iuran Koperasi" readonly required>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div class="row">
                                         <div class="col-md-4 col-12">
                                             <div class="form-group">
                                                 <label for="ptwp" class="form-label">PTWP</label>
@@ -116,9 +116,6 @@
                                                     placeholder="PTWP" readonly required>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="row">
                                         <div class="col-md-4 col-12">
                                             <div class="form-group">
                                                 <label for="ipaspi" class="form-label">IPASPI</label>
@@ -134,6 +131,9 @@
                                                     required>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div class="row">
                                         <div class="col-md-4 col-12">
                                             <div class="form-group">
                                                 <label for="bapor" class="form-label">BAPOR</label>
@@ -141,9 +141,6 @@
                                                     placeholder="BAPOR" readonly required>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="row">
                                         <div class="col-md-4 col-12">
                                             <div class="form-group">
                                                 <label for="kebersamaan_hakim" class="form-label">Kebersamaan
@@ -160,6 +157,9 @@
                                                     placeholder="Mushola" readonly required>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div class="row">
                                         <div class="col-md-4 col-12">
                                             <div class="form-group">
                                                 <label for="bri_bsm_jabar" class="form-label">BRI BSM Jabar</label>
@@ -167,9 +167,6 @@
                                                     name="bri_bsm_jabar" placeholder="BRI BSM Jabar" readonly required>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="row">
                                         <div class="col-md-4 col-12">
                                             <div class="form-group">
                                                 <label for="sewa_rumah" class="form-label">Sewa Rumah</label>

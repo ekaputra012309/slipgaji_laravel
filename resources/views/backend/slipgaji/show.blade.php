@@ -140,7 +140,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">2.</td>
-                                                    <td>LAIN-LAIN</td>
+                                                    <td>DANA SOSIAL</td>
                                                     <td style="text-align: right;"><span id="lain2">
                                                             {{ formatRupiah($slipgaji->lain2) }} </span>
                                                     </td>
@@ -148,7 +148,7 @@
                                                     <td style="width: 20px;">&nbsp;</td>
                                                     <td>{{ $p_jawab->lain2 }}</td>
                                                 </tr>
-                                                <tr>
+                                                {{-- <tr>
                                                     <td style="text-align:right">3.</td>
                                                     <td>ARISAN GABUNGAN DYK</td>
                                                     <td style="text-align: right;"><span id="arisan_gabungan">
@@ -169,9 +169,9 @@
                                                     <td>&nbsp;</td>
                                                     <td style="width: 20px;">&nbsp;</td>
                                                     <td>{{ $p_jawab->simpan_pinjam }}</td>
-                                                </tr>
+                                                </tr> --}}
                                                 <tr>
-                                                    <td style="text-align:right">5.</td>
+                                                    <td style="text-align:right">3.</td>
                                                     <td>IURAN DYK</td>
                                                     <td style="text-align: right;"><span id="iuran_dyk">
                                                             {{ formatRupiah($slipgaji->iuran_dyk) }} </span>
@@ -181,7 +181,7 @@
                                                     <td>{{ $p_jawab->iuran_dyk }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right">6.</td>
+                                                    <td style="text-align:right">4.</td>
                                                     <td>IURAN KOPERASI</td>
                                                     <td style="text-align: right;"><span id="iuran_koperasi">
                                                             {{ formatRupiah($slipgaji->iuran_koperasi) }}
@@ -192,7 +192,7 @@
                                                     <td>{{ $p_jawab->iuran_koperasi }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right">7.</td>
+                                                    <td style="text-align:right">5.</td>
                                                     <td>PTWP</td>
                                                     <td style="text-align: right;"><span id="ptwp">
                                                             {{ formatRupiah($slipgaji->ptwp) }} </span>
@@ -202,7 +202,7 @@
                                                     <td>{{ $p_jawab->ptwp }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right">8.</td>
+                                                    <td style="text-align:right">6.</td>
                                                     <td>IPASPI</td>
                                                     <td style="text-align: right;"><span id="ipaspi">
                                                             {{ formatRupiah($slipgaji->ipaspi) }} </span>
@@ -212,7 +212,7 @@
                                                     <td>{{ $p_jawab->ipaspi }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right">9.</td>
+                                                    <td style="text-align:right">7.</td>
                                                     <td>PINJAMAN KOPERASI</td>
                                                     <td style="text-align: right;"><span id="pinjaman_koperasi">
                                                             {{ formatRupiah($slipgaji->pinjaman_koperasi) }}
@@ -223,7 +223,7 @@
                                                     <td>{{ $p_jawab->pinjaman_koperasi }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right">10.</td>
+                                                    <td style="text-align:right">8.</td>
                                                     <td>BAPOR</td>
                                                     <td style="text-align: right;"><span id="bapor">
                                                             {{ formatRupiah($slipgaji->bapor) }} </span>
@@ -233,7 +233,7 @@
                                                     <td>{{ $p_jawab->bapor }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right">11.</td>
+                                                    <td style="text-align:right">9.</td>
                                                     <td>KEBERSAMAAN HAKIM</td>
                                                     <td style="text-align: right;"><span id="kebersamaan_hakim">
                                                             {{ formatRupiah($slipgaji->kebersamaan_hakim) }}
@@ -244,7 +244,7 @@
                                                     <td>{{ $p_jawab->kebersamaan_hakim }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right">12.</td>
+                                                    <td style="text-align:right">10.</td>
                                                     <td>MUSHOLA</td>
                                                     <td style="text-align: right;"><span id="mushola">
                                                             {{ formatRupiah($slipgaji->mushola) }} </span>
@@ -254,7 +254,7 @@
                                                     <td>{{ $p_jawab->mushola }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right">13.</td>
+                                                    <td style="text-align:right">11.</td>
                                                     <td>BRI/BSM/JABAR</td>
                                                     <td style="text-align: right;"><span id="bri_bsm_jabar">
                                                             {{ formatRupiah($slipgaji->bri_bsm_jabar) }}
@@ -265,7 +265,7 @@
                                                     <td>{{ $p_jawab->bri_bsm_jabar }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right">14.</td>
+                                                    <td style="text-align:right">12.</td>
                                                     <td>SEWA RUMAH</td>
                                                     <td style="text-align: right;"><span id="sewa_rumah">
                                                             {{ formatRupiah($slipgaji->sewa_rumah) }} </span>
@@ -275,7 +275,7 @@
                                                     <td>{{ $p_jawab->sewa_rumah }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:right">15.</td>
+                                                    <td style="text-align:right">13.</td>
                                                     <td>IURAN DYK HAKIM/BPDSH</td>
                                                     <td style="text-align: right;"><span id="iuran_hakim">
                                                             {{ formatRupiah($slipgaji->iuran_hakim) }}
