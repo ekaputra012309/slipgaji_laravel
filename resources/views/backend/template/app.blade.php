@@ -8,8 +8,10 @@
     <title>{{ config('app.name') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    {{-- <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css"> --}}
+    <link rel="stylesheet" href="{{ asset('backend/fontawesome-free/css/all.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('backend/css/OverlayScrollbars.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/adminlte.min.css?v=3.2.0') }}">
@@ -20,7 +22,8 @@
     <script src="{{ asset('backend/js/jquery.overlayScrollbars.min.js') }}"></script>
 
     {{-- datatables css --}}
-    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet"
+        href="https://adminlte.io/themes/v3/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     {{-- <link rel="stylesheet" href="{{ asset('backend/css/datatables/dataTables.bootstrap4.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('backend/css/datatables/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/datatables/buttons.bootstrap4.min.css') }}">
@@ -144,7 +147,7 @@
     <script>
         $(document).ready(function() {
             $.ajax({
-                url: '{{ route("get.role.name") }}',
+                url: '{{ route('get.role.name') }}',
                 type: 'GET',
                 success: function(response) {
                     if (response.role_name) {
